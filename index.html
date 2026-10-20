@@ -5,118 +5,168 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#090909">
-<title>Thananchai Barbershop | LP101</title>
+<title>Thananchai Barbershop</title>
 <style>
 :root{--gold:#d6ae62;--bg:#090909;--card:#151515;--muted:#b9b9b9}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:#fff;font-family:Arial,sans-serif;line-height:1.6}
-header{padding:18px 6%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #292929;gap:15px;flex-wrap:wrap}
-.logo{font-size:20px;font-weight:bold;color:var(--gold);letter-spacing:1px}
-select,button,input{font:inherit}
-select{background:#171717;color:white;border:1px solid #555;padding:10px;border-radius:6px}
-.hero{min-height:510px;display:flex;align-items:center;padding:70px 8%;background:linear-gradient(90deg,#090909 10%,#090909e8 55%,#09090960),url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1800&q=85') center/cover}
-.hero-content{max-width:650px}
+header{height:76px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #292929;background:#090909}
+.logo{font-size:19px;font-weight:bold;color:var(--gold);letter-spacing:1px}
+nav{display:flex;gap:22px}
+nav a{color:#eee;text-decoration:none;font-size:14px}
+nav a:hover{color:var(--gold)}
+select,button,input,textarea{font:inherit}
+select{background:#171717;color:white;border:1px solid #555;padding:9px;border-radius:5px}
+.hero{min-height:570px;display:flex;align-items:center;justify-content:center;text-align:center;padding:70px 6%;background:linear-gradient(#0008,#000b),url('YOUR-HERO-IMAGE.jpg') center/cover no-repeat}
+.hero-content{max-width:800px}
 .tag{color:var(--gold);letter-spacing:4px;font-size:13px}
-h1{font-size:clamp(38px,6vw,68px);line-height:1.08;margin:18px 0}
+h1{font-size:clamp(38px,7vw,76px);line-height:1.08;margin:18px 0}
 h2{font-size:30px;margin:0 0 12px}
 p{color:var(--muted)}
-.gold{color:var(--gold)}
-.btn{display:inline-block;background:var(--gold);color:#111;padding:13px 23px;border:0;border-radius:4px;font-weight:bold;text-decoration:none;cursor:pointer;margin:8px 8px 8px 0}
+.btn{display:inline-block;padding:12px 24px;background:var(--gold);color:#111;border:0;border-radius:3px;text-decoration:none;font-weight:bold;cursor:pointer}
 .btn-outline{background:transparent;border:1px solid var(--gold);color:var(--gold)}
-section{padding:65px 7%}
-.section-head{text-align:center;margin-bottom:32px}
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.service{background:var(--card);border:1px solid #292929;padding:25px;border-radius:8px}
-.service h3{margin-top:0}
-.price{font-size:22px;font-weight:bold;color:var(--gold)}
-.booking{background:#111}
-form{max-width:650px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.field{display:flex;flex-direction:column;gap:7px}
+section{padding:70px 7%}
+.section-head{text-align:center;margin-bottom:35px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid #292929;border-radius:6px;overflow:hidden}
+.photo{height:210px;background:#222;display:flex;align-items:center;justify-content:center;color:#aaa;text-align:center;padding:12px;background-size:cover;background-position:center}
+.card-body{padding:22px}
+.card h3{margin:0;color:var(--gold)}
+.price{color:var(--gold);font-size:21px;font-weight:bold}
+.small{font-size:13px}
+#perm{background:#101010}
+.notice{border-left:3px solid var(--gold);padding:12px 16px;background:#191919}
+form{max-width:680px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.field{display:flex;flex-direction:column;gap:6px}
 .field.full{grid-column:1/-1}
-input,form select{width:100%;padding:13px;background:#1a1a1a;border:1px solid #444;color:white;border-radius:5px}
+input,textarea,form select{width:100%;padding:12px;background:#171717;border:1px solid #444;color:#fff;border-radius:4px}
 label{font-size:14px;color:#ddd}
-form button{width:100%}
-.note{font-size:13px;text-align:center}
-.contact{text-align:center}
-footer{text-align:center;padding:25px;border-top:1px solid #292929;color:#aaa;font-size:13px}
-@media(max-width:600px){header{padding:15px 5%}.hero{padding:60px 6%;min-height:440px}section{padding:48px 5%}form{grid-template-columns:1fr}.field.full{grid-column:auto}}
+footer{text-align:center;padding:28px;border-top:1px solid #292929;color:#aaa}
+@media(max-width:650px){
+ header{height:auto;min-height:70px;flex-wrap:wrap;padding:15px 5%;gap:12px}
+ nav{order:3;width:100%;overflow-x:auto;padding:8px 0}
+ nav a{white-space:nowrap}
+ .hero{min-height:480px}
+ section{padding:52px 5%}
+ form{grid-template-columns:1fr}
+ .field.full{grid-column:auto}
+}
 </style>
 </head>
 <body>
+
 <header>
-  <div class="logo">THANANCHAI <span style="color:white">BARBERSHOP</span></div>
-  <select id="language" aria-label="Choose language" onchange="changeLanguage(this.value)">
-    <option value="en">English</option>
+  <div class="logo">THANANCHAI BARBERSHOP</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#branches">Branches</a>
+    <a href="#services">Services</a>
+    <a href="#perm">Perm</a>
+    <a href="#booking">Booking</a>
+  </nav>
+  <select id="language" aria-label="Language" onchange="setLanguage(this.value)">
+    <option value="en">EN</option>
     <option value="th">ไทย</option>
     <option value="ar">العربية</option>
   </select>
 </header>
 
 <main>
-<section class="hero">
+<section class="hero" id="home">
   <div class="hero-content">
-    <div class="tag" data-en="PRECISION • STYLE • CONFIDENCE" data-th="ความประณีต • สไตล์ • ความมั่นใจ" data-ar="الدقة • الأناقة • الثقة">PRECISION • STYLE • CONFIDENCE</div>
-    <h1 data-en="Your Style.<br>Our Craft." data-th="สไตล์ของคุณ<br>งานฝีมือของเรา" data-ar="أناقتك.<br>حرفتنا.">Your Style.<br>Our Craft.</h1>
-    <p data-en="Professional haircuts and modern styles at Thananchai Barbershop, LP101." data-th="ตัดผมอย่างมืออาชีพและสไตล์ทันสมัย ที่ Thananchai Barbershop LP101" data-ar="قصات احترافية وتسريحات عصرية في Thananchai Barbershop LP101.">Professional haircuts and modern styles at Thananchai Barbershop, LP101.</p>
+    <div class="tag" data-en="PREMIUM GROOMING" data-th="บริการตัดผมระดับพรีเมียม" data-ar="عناية احترافية وفاخرة">PREMIUM GROOMING</div>
+    <h1 data-en="Your Style.<br>Our Craft." data-th="สไตล์ของคุณ<br>ฝีมือของเรา" data-ar="أسلوبك الخاص<br>وحرفيتنا">Your Style.<br>Our Craft.</h1>
+    <p data-en="Professional cuts. Personal style. Four branches." data-th="ตัดผมอย่างมืออาชีพ มีสไตล์ ใน 4 สาขา" data-ar="حلاقة احترافية وأسلوب مميز في أربعة فروع">Professional cuts. Personal style. Four branches.</p>
     <a class="btn" href="#booking" data-en="BOOK AN APPOINTMENT" data-th="จองคิว" data-ar="احجز موعدك">BOOK AN APPOINTMENT</a>
-    <a class="btn btn-outline" href="#services" data-en="OUR SERVICES" data-th="บริการของเรา" data-ar="خدماتنا">OUR SERVICES</a>
+  </div>
+</section>
+
+<section id="branches">
+  <div class="section-head">
+    <div class="tag">OUR LOCATIONS</div>
+    <h2 data-en="Find Your Branch" data-th="เลือกสาขาของคุณ" data-ar="اختر فرعك">Find Your Branch</h2>
+    <p data-en="Four branches, one standard of quality." data-th="4 สาขา มาตรฐานเดียวกัน" data-ar="أربعة فروع بمعيار واحد من الجودة">Four branches, one standard of quality.</p>
+  </div>
+  <div class="grid">
+    <article class="card"><div class="photo">Add Branch 1 Photo</div><div class="card-body"><h3>Branch 01</h3><p>Branch address will be added here.</p><a href="#booking" class="btn btn-outline" onclick="chooseBranch(1)">Choose Branch</a></div></article>
+    <article class="card"><div class="photo">Add Branch 2 Photo</div><div class="card-body"><h3>Branch 02</h3><p>Branch address will be added here.</p><a href="#booking" class="btn btn-outline" onclick="chooseBranch(2)">Choose Branch</a></div></article>
+    <article class="card"><div class="photo">Add Branch 3 Photo</div><div class="card-body"><h3>Branch 03</h3><p>Branch address will be added here.</p><a href="#booking" class="btn btn-outline" onclick="chooseBranch(3)">Choose Branch</a></div></article>
+    <article class="card"><div class="photo">Add Branch 4 Photo</div><div class="card-body"><h3>Branch 04</h3><p>Branch address will be added here.</p><a href="#booking" class="btn btn-outline" onclick="chooseBranch(4)">Choose Branch</a></div></article>
   </div>
 </section>
 
 <section id="services">
   <div class="section-head">
-    <div class="tag" data-en="LOOK SHARP" data-th="ดูดีในทุกสไตล์" data-ar="إطلالة مميزة">LOOK SHARP</div>
-    <h2 data-en="Our Services" data-th="บริการของเรา" data-ar="خدماتنا">Our Services</h2>
-    <p data-en="Quality grooming, tailored to your style." data-th="บริการดูแลทรงผมที่เหมาะกับสไตล์ของคุณ" data-ar="عناية احترافية تناسب أسلوبك.">Quality grooming, tailored to your style.</p>
+    <div class="tag">OUR SERVICES</div>
+    <h2 data-en="Services & Prices" data-th="บริการและราคา" data-ar="الخدمات والأسعار">Services & Prices</h2>
+    <p>Final prices can be added after you confirm the menu.</p>
   </div>
-  <div class="services">
-    <article class="service"><h3 data-en="Classic Haircut" data-th="ตัดผมทรงคลาสสิก" data-ar="قص شعر كلاسيكي">Classic Haircut</h3><p data-en="Clean, timeless and tailored to you." data-th="เรียบง่าย คลาสสิก และเหมาะกับคุณ" data-ar="قصة أنيقة وكلاسيكية تناسبك.">Clean, timeless and tailored to you.</p><div class="price">฿150–200</div></article>
-    <article class="service"><h3>Fade / Taper</h3><p data-en="Smooth blends and sharp details." data-th="ไล่ระดับอย่างเนียน พร้อมรายละเอียดคมชัด" data-ar="تدرّج ناعم وتفاصيل دقيقة.">Smooth blends and sharp details.</p><div class="price">฿150–200</div></article>
-    <article class="service"><h3 data-en="Modern Hairstyles" data-th="ทรงผมสมัยใหม่" data-ar="تسريحات عصرية">Modern Hairstyles</h3><p data-en="Mullet, wolf cut, textured and more." data-th="มัลเล็ต วูล์ฟคัต เท็กซ์เจอร์ และอื่น ๆ" data-ar="موليت، وولف كت، وتسريحات متنوعة.">Mullet, wolf cut, textured and more.</p><div class="price" data-en="Ask for price" data-th="สอบถามราคา" data-ar="استفسر عن السعر">Ask for price</div></article>
-    <article class="service"><h3 data-en="Perm & Hair Colour" data-th="ดัดผมและทำสี" data-ar="البرم وصبغ الشعر">Perm & Hair Colour</h3><p data-en="Transform your look with a new style." data-th="เปลี่ยนลุคด้วยสไตล์ใหม่" data-ar="جدّد إطلالتك بتسريحة جديدة.">Transform your look with a new style.</p><div class="price" data-en="Consultation required" data-th="สอบถามก่อนใช้บริการ" data-ar="يتطلب استشارة للسعر">Consultation required</div></article>
+  <div class="grid">
+    <article class="card"><div class="card-body"><h3>Haircut</h3><p>Classic cuts and modern styles.</p><div class="price">Price TBC</div></div></article>
+    <article class="card"><div class="card-body"><h3>Fade</h3><p>Clean blends and sharp finishes.</p><div class="price">Price TBC</div></div></article>
+    <article class="card"><div class="card-body"><h3>Hair & Beard</h3><p>A complete grooming service.</p><div class="price">Price TBC</div></div></article>
+    <article class="card"><div class="card-body"><h3>Perm & Colour</h3><p>Styles tailored to your hair.</p><div class="price">Price TBC</div></div></article>
   </div>
 </section>
 
-<section class="booking" id="booking">
+<section id="perm">
   <div class="section-head">
-    <div class="tag" data-en="YOUR NEXT LOOK STARTS HERE" data-th="เริ่มต้นลุคใหม่ของคุณที่นี่" data-ar="إطلالتك القادمة تبدأ هنا">YOUR NEXT LOOK STARTS HERE</div>
+    <div class="tag">PERM SERVICES</div>
+    <h2>Discover Your Perm Style</h2>
+    <p>We will add photos, names and prices for each perm type here.</p>
+  </div>
+  <div class="grid">
+    <article class="card"><div class="photo">Add Perm Style Photo 1</div><div class="card-body"><h3>Perm Style 01</h3><p>Details and price to be added.</p></div></article>
+    <article class="card"><div class="photo">Add Perm Style Photo 2</div><div class="card-body"><h3>Perm Style 02</h3><p>Details and price to be added.</p></div></article>
+    <article class="card"><div class="photo">Add Perm Style Photo 3</div><div class="card-body"><h3>Perm Style 03</h3><p>Details and price to be added.</p></div></article>
+  </div>
+  <div class="notice" style="max-width:800px;margin:28px auto 0">
+    <strong>Before booking a perm</strong>
+    <p>Hair length of at least 15 cm is recommended for all perm types. Results can vary depending on your hair type and the style selected.</p>
+  </div>
+</section>
+
+<section id="booking">
+  <div class="section-head">
+    <div class="tag">RESERVATIONS</div>
     <h2 data-en="Book Your Appointment" data-th="จองคิวของคุณ" data-ar="احجز موعدك">Book Your Appointment</h2>
-    <p data-en="Send your booking request to the shop." data-th="ส่งคำขอจองคิวถึงร้าน" data-ar="أرسل طلب الحجز إلى المحل.">Send your booking request to the shop.</p>
+    <p>Choose your branch, barber and service.</p>
   </div>
   <form id="bookingForm">
-    <div class="field"><label for="name" data-en="Your name" data-th="ชื่อของคุณ" data-ar="اسمك">Your name</label><input id="name" name="name" required autocomplete="name" placeholder="Your name"></div>
-    <div class="field"><label for="phone" data-en="Phone / LINE" data-th="เบอร์โทร / LINE" data-ar="الهاتف / LINE">Phone / LINE</label><input id="phone" name="phone" required placeholder="Phone or LINE ID"></div>
-    <div class="field"><label for="service" data-en="Service" data-th="บริการ" data-ar="الخدمة">Service</label><select id="service" name="service"><option>Classic Haircut</option><option>Fade / Taper</option><option>Modern Hairstyle</option><option>Perm</option><option>Hair Colour</option><option>Other</option></select></div>
-    <div class="field"><label for="date" data-en="Preferred date" data-th="วันที่ต้องการ" data-ar="التاريخ المطلوب">Preferred date</label><input type="date" id="date" name="date" required></div>
-    <div class="field full"><label for="time" data-en="Preferred time" data-th="เวลาที่ต้องการ" data-ar="الوقت المطلوب">Preferred time</label><input type="time" id="time" name="time" required></div>
-    <div class="field full"><button class="btn" type="submit" data-en="SEND BOOKING REQUEST" data-th="ส่งคำขอจองคิว" data-ar="إرسال طلب الحجز">SEND BOOKING REQUEST</button></div>
+    <div class="field"><label for="customer">Your name</label><input id="customer" required placeholder="Full name"></div>
+    <div class="field"><label for="phone">Phone / LINE</label><input id="phone" required placeholder="Contact number"></div>
+    <div class="field"><label for="branch">Branch</label><select id="branch" required><option value="">Choose a branch</option><option>Branch 01</option><option>Branch 02</option><option>Branch 03</option><option>Branch 04</option></select></div>
+    <div class="field"><label for="barber">Preferred barber</label><select id="barber" required><option value="">Choose barber</option><option>Any available barber</option><option>Barber 01 - name to be added</option><option>Barber 02 - name to be added</option></select></div>
+    <div class="field"><label for="service">Service</label><select id="service" required><option>Haircut</option><option>Fade</option><option>Hair & Beard</option><option>Perm</option><option>Colour</option></select></div>
+    <div class="field"><label for="date">Preferred date</label><input type="date" id="date" required></div>
+    <div class="field"><label for="time">Preferred time</label><input type="time" id="time" required></div>
+    <div class="field full"><label for="notes">Notes (optional)</label><textarea id="notes" rows="3" placeholder="Tell us what style you want"></textarea></div>
+    <div class="field full"><button class="btn" type="submit">Prepare Booking Request</button><p class="small">Demo only: this form does not send or save bookings yet.</p></div>
   </form>
-  <p class="note" id="bookingMessage" role="status">Demo form only — online booking will be connected to the database in the next step.</p>
-</section>
-
-<section class="contact">
-  <h2 data-en="Visit Thananchai Barbershop" data-th="แวะมาที่ Thananchai Barbershop" data-ar="تفضل بزيارة Thananchai Barbershop">Visit Thananchai Barbershop</h2>
-  <p>LP101, Bangkok, Thailand</p>
-  <p data-en="Contact the shop to confirm your appointment." data-th="กรุณาติดต่อร้านเพื่อยืนยันการจอง" data-ar="تواصل مع المحل لتأكيد موعدك.">Contact the shop to confirm your appointment.</p>
 </section>
 </main>
 
-<footer>© <span id="year"></span> Thananchai Barbershop – LP101</footer>
+<footer>
+  <div class="logo">THANANCHAI BARBERSHOP</div>
+  <p>Four branches • Bangkok, Thailand</p>
+  <p class="small">Branch details and contact information will be added after confirmation.</p>
+</footer>
+
 <script>
-function changeLanguage(lang){
+function chooseBranch(n){
+  document.getElementById('branch').selectedIndex=n;
+}
+function setLanguage(lang){
   document.documentElement.lang=lang;
   document.documentElement.dir=lang==='ar'?'rtl':'ltr';
   document.querySelectorAll('[data-'+lang+']').forEach(el=>{
     el.innerHTML=el.getAttribute('data-'+lang);
   });
 }
-document.getElementById('year').textContent=new Date().getFullYear();
-document.getElementById('date').min=new Date().toISOString().split('T')[0];
 document.getElementById('bookingForm').addEventListener('submit',function(e){
   e.preventDefault();
-  document.getElementById('bookingMessage').textContent=
-    'This is a preview only. Your request has NOT been saved or sent. Database booking will be enabled in the next step.';
+  alert('This is a design preview only. Online booking will be connected later.');
 });
 </script>
 </body>
