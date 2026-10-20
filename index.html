@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090909">
+<title>Thananchai Barbershop | LP101</title>
+<style>
+:root{--gold:#d6ae62;--bg:#090909;--card:#151515;--muted:#b9b9b9}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:#fff;font-family:Arial,sans-serif;line-height:1.6}
+header{padding:18px 6%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #292929;gap:15px;flex-wrap:wrap}
+.logo{font-size:20px;font-weight:bold;color:var(--gold);letter-spacing:1px}
+select,button,input{font:inherit}
+select{background:#171717;color:white;border:1px solid #555;padding:10px;border-radius:6px}
+.hero{min-height:510px;display:flex;align-items:center;padding:70px 8%;background:linear-gradient(90deg,#090909 10%,#090909e8 55%,#09090960),url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1800&q=85') center/cover}
+.hero-content{max-width:650px}
+.tag{color:var(--gold);letter-spacing:4px;font-size:13px}
+h1{font-size:clamp(38px,6vw,68px);line-height:1.08;margin:18px 0}
+h2{font-size:30px;margin:0 0 12px}
+p{color:var(--muted)}
+.gold{color:var(--gold)}
+.btn{display:inline-block;background:var(--gold);color:#111;padding:13px 23px;border:0;border-radius:4px;font-weight:bold;text-decoration:none;cursor:pointer;margin:8px 8px 8px 0}
+.btn-outline{background:transparent;border:1px solid var(--gold);color:var(--gold)}
+section{padding:65px 7%}
+.section-head{text-align:center;margin-bottom:32px}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.service{background:var(--card);border:1px solid #292929;padding:25px;border-radius:8px}
+.service h3{margin-top:0}
+.price{font-size:22px;font-weight:bold;color:var(--gold)}
+.booking{background:#111}
+form{max-width:650px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+input,form select{width:100%;padding:13px;background:#1a1a1a;border:1px solid #444;color:white;border-radius:5px}
+label{font-size:14px;color:#ddd}
+form button{width:100%}
+.note{font-size:13px;text-align:center}
+.contact{text-align:center}
+footer{text-align:center;padding:25px;border-top:1px solid #292929;color:#aaa;font-size:13px}
+@media(max-width:600px){header{padding:15px 5%}.hero{padding:60px 6%;min-height:440px}section{padding:48px 5%}form{grid-template-columns:1fr}.field.full{grid-column:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">THANANCHAI <span style="color:white">BARBERSHOP</span></div>
+  <select id="language" aria-label="Choose language" onchange="changeLanguage(this.value)">
+    <option value="en">English</option>
+    <option value="th">ไทย</option>
+    <option value="ar">العربية</option>
+  </select>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-content">
+    <div class="tag" data-en="PRECISION • STYLE • CONFIDENCE" data-th="ความประณีต • สไตล์ • ความมั่นใจ" data-ar="الدقة • الأناقة • الثقة">PRECISION • STYLE • CONFIDENCE</div>
+    <h1 data-en="Your Style.<br>Our Craft." data-th="สไตล์ของคุณ<br>งานฝีมือของเรา" data-ar="أناقتك.<br>حرفتنا.">Your Style.<br>Our Craft.</h1>
+    <p data-en="Professional haircuts and modern styles at Thananchai Barbershop, LP101." data-th="ตัดผมอย่างมืออาชีพและสไตล์ทันสมัย ที่ Thananchai Barbershop LP101" data-ar="قصات احترافية وتسريحات عصرية في Thananchai Barbershop LP101.">Professional haircuts and modern styles at Thananchai Barbershop, LP101.</p>
+    <a class="btn" href="#booking" data-en="BOOK AN APPOINTMENT" data-th="จองคิว" data-ar="احجز موعدك">BOOK AN APPOINTMENT</a>
+    <a class="btn btn-outline" href="#services" data-en="OUR SERVICES" data-th="บริการของเรา" data-ar="خدماتنا">OUR SERVICES</a>
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-head">
+    <div class="tag" data-en="LOOK SHARP" data-th="ดูดีในทุกสไตล์" data-ar="إطلالة مميزة">LOOK SHARP</div>
+    <h2 data-en="Our Services" data-th="บริการของเรา" data-ar="خدماتنا">Our Services</h2>
+    <p data-en="Quality grooming, tailored to your style." data-th="บริการดูแลทรงผมที่เหมาะกับสไตล์ของคุณ" data-ar="عناية احترافية تناسب أسلوبك.">Quality grooming, tailored to your style.</p>
+  </div>
+  <div class="services">
+    <article class="service"><h3 data-en="Classic Haircut" data-th="ตัดผมทรงคลาสสิก" data-ar="قص شعر كلاسيكي">Classic Haircut</h3><p data-en="Clean, timeless and tailored to you." data-th="เรียบง่าย คลาสสิก และเหมาะกับคุณ" data-ar="قصة أنيقة وكلاسيكية تناسبك.">Clean, timeless and tailored to you.</p><div class="price">฿150–200</div></article>
+    <article class="service"><h3>Fade / Taper</h3><p data-en="Smooth blends and sharp details." data-th="ไล่ระดับอย่างเนียน พร้อมรายละเอียดคมชัด" data-ar="تدرّج ناعم وتفاصيل دقيقة.">Smooth blends and sharp details.</p><div class="price">฿150–200</div></article>
+    <article class="service"><h3 data-en="Modern Hairstyles" data-th="ทรงผมสมัยใหม่" data-ar="تسريحات عصرية">Modern Hairstyles</h3><p data-en="Mullet, wolf cut, textured and more." data-th="มัลเล็ต วูล์ฟคัต เท็กซ์เจอร์ และอื่น ๆ" data-ar="موليت، وولف كت، وتسريحات متنوعة.">Mullet, wolf cut, textured and more.</p><div class="price" data-en="Ask for price" data-th="สอบถามราคา" data-ar="استفسر عن السعر">Ask for price</div></article>
+    <article class="service"><h3 data-en="Perm & Hair Colour" data-th="ดัดผมและทำสี" data-ar="البرم وصبغ الشعر">Perm & Hair Colour</h3><p data-en="Transform your look with a new style." data-th="เปลี่ยนลุคด้วยสไตล์ใหม่" data-ar="جدّد إطلالتك بتسريحة جديدة.">Transform your look with a new style.</p><div class="price" data-en="Consultation required" data-th="สอบถามก่อนใช้บริการ" data-ar="يتطلب استشارة للسعر">Consultation required</div></article>
+  </div>
+</section>
+
+<section class="booking" id="booking">
+  <div class="section-head">
+    <div class="tag" data-en="YOUR NEXT LOOK STARTS HERE" data-th="เริ่มต้นลุคใหม่ของคุณที่นี่" data-ar="إطلالتك القادمة تبدأ هنا">YOUR NEXT LOOK STARTS HERE</div>
+    <h2 data-en="Book Your Appointment" data-th="จองคิวของคุณ" data-ar="احجز موعدك">Book Your Appointment</h2>
+    <p data-en="Send your booking request to the shop." data-th="ส่งคำขอจองคิวถึงร้าน" data-ar="أرسل طلب الحجز إلى المحل.">Send your booking request to the shop.</p>
+  </div>
+  <form id="bookingForm">
+    <div class="field"><label for="name" data-en="Your name" data-th="ชื่อของคุณ" data-ar="اسمك">Your name</label><input id="name" name="name" required autocomplete="name" placeholder="Your name"></div>
+    <div class="field"><label for="phone" data-en="Phone / LINE" data-th="เบอร์โทร / LINE" data-ar="الهاتف / LINE">Phone / LINE</label><input id="phone" name="phone" required placeholder="Phone or LINE ID"></div>
+    <div class="field"><label for="service" data-en="Service" data-th="บริการ" data-ar="الخدمة">Service</label><select id="service" name="service"><option>Classic Haircut</option><option>Fade / Taper</option><option>Modern Hairstyle</option><option>Perm</option><option>Hair Colour</option><option>Other</option></select></div>
+    <div class="field"><label for="date" data-en="Preferred date" data-th="วันที่ต้องการ" data-ar="التاريخ المطلوب">Preferred date</label><input type="date" id="date" name="date" required></div>
+    <div class="field full"><label for="time" data-en="Preferred time" data-th="เวลาที่ต้องการ" data-ar="الوقت المطلوب">Preferred time</label><input type="time" id="time" name="time" required></div>
+    <div class="field full"><button class="btn" type="submit" data-en="SEND BOOKING REQUEST" data-th="ส่งคำขอจองคิว" data-ar="إرسال طلب الحجز">SEND BOOKING REQUEST</button></div>
+  </form>
+  <p class="note" id="bookingMessage" role="status">Demo form only — online booking will be connected to the database in the next step.</p>
+</section>
+
+<section class="contact">
+  <h2 data-en="Visit Thananchai Barbershop" data-th="แวะมาที่ Thananchai Barbershop" data-ar="تفضل بزيارة Thananchai Barbershop">Visit Thananchai Barbershop</h2>
+  <p>LP101, Bangkok, Thailand</p>
+  <p data-en="Contact the shop to confirm your appointment." data-th="กรุณาติดต่อร้านเพื่อยืนยันการจอง" data-ar="تواصل مع المحل لتأكيد موعدك.">Contact the shop to confirm your appointment.</p>
+</section>
+</main>
+
+<footer>© <span id="year"></span> Thananchai Barbershop – LP101</footer>
+<script>
+function changeLanguage(lang){
+  document.documentElement.lang=lang;
+  document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+  document.querySelectorAll('[data-'+lang+']').forEach(el=>{
+    el.innerHTML=el.getAttribute('data-'+lang);
+  });
+}
+document.getElementById('year').textContent=new Date().getFullYear();
+document.getElementById('date').min=new Date().toISOString().split('T')[0];
+document.getElementById('bookingForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  document.getElementById('bookingMessage').textContent=
+    'This is a preview only. Your request has NOT been saved or sent. Database booking will be enabled in the next step.';
+});
+</script>
+</body>
+</html>
