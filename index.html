@@ -3,170 +3,172 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#090909">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a0a0a">
 <title>Thananchai Barbershop</title>
 <style>
-:root{--gold:#d6ae62;--bg:#090909;--card:#151515;--muted:#b9b9b9}
+:root{--gold:#d6b36a;--bg:#0a0a0a;--card:#151515;--muted:#bbb}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:#fff;font-family:Arial,sans-serif;line-height:1.6}
-header{height:76px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #292929;background:#090909}
-.logo{font-size:19px;font-weight:bold;color:var(--gold);letter-spacing:1px}
-nav{display:flex;gap:22px}
-nav a{color:#eee;text-decoration:none;font-size:14px}
+header{position:sticky;top:0;z-index:5;background:#090909;padding:15px 5%;border-bottom:1px solid #292929;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.logo{color:var(--gold);font-weight:bold;letter-spacing:1px}
+nav{display:flex;gap:15px;flex-wrap:wrap}
+a{color:inherit;text-decoration:none}
 nav a:hover{color:var(--gold)}
-select,button,input,textarea{font:inherit}
-select{background:#171717;color:white;border:1px solid #555;padding:9px;border-radius:5px}
-.hero{min-height:570px;display:flex;align-items:center;justify-content:center;text-align:center;padding:70px 6%;background:linear-gradient(#0008,#000b),url('YOUR-HERO-IMAGE.jpg') center/cover no-repeat}
-.hero-content{max-width:800px}
-.tag{color:var(--gold);letter-spacing:4px;font-size:13px}
-h1{font-size:clamp(38px,7vw,76px);line-height:1.08;margin:18px 0}
-h2{font-size:30px;margin:0 0 12px}
+select,input,textarea,button{font:inherit}
+select,input,textarea{background:#191919;color:white;border:1px solid #444;padding:11px;border-radius:4px;width:100%}
+#language{width:auto}
+.hero{min-height:82vh;display:grid;place-items:center;text-align:center;padding:45px 6%;background:linear-gradient(#0007,#000c),url('images/hero.jpg') center/cover no-repeat}
+.hero-inner{max-width:850px}
+.kicker{color:var(--gold);letter-spacing:4px;font-size:13px}
+h1{font-size:clamp(40px,8vw,82px);line-height:1.1;margin:15px 0}
+h2{font-size:32px;margin:5px 0}
 p{color:var(--muted)}
-.btn{display:inline-block;padding:12px 24px;background:var(--gold);color:#111;border:0;border-radius:3px;text-decoration:none;font-weight:bold;cursor:pointer}
-.btn-outline{background:transparent;border:1px solid var(--gold);color:var(--gold)}
-section{padding:70px 7%}
-.section-head{text-align:center;margin-bottom:35px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
-.card{background:var(--card);border:1px solid #292929;border-radius:6px;overflow:hidden}
-.photo{height:210px;background:#222;display:flex;align-items:center;justify-content:center;color:#aaa;text-align:center;padding:12px;background-size:cover;background-position:center}
-.card-body{padding:22px}
-.card h3{margin:0;color:var(--gold)}
-.price{color:var(--gold);font-size:21px;font-weight:bold}
-.small{font-size:13px}
-#perm{background:#101010}
-.notice{border-left:3px solid var(--gold);padding:12px 16px;background:#191919}
-form{max-width:680px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:15px}
-.field{display:flex;flex-direction:column;gap:6px}
-.field.full{grid-column:1/-1}
-input,textarea,form select{width:100%;padding:12px;background:#171717;border:1px solid #444;color:#fff;border-radius:4px}
+.btn{display:inline-block;border:0;border-radius:3px;background:var(--gold);color:#111;font-weight:bold;padding:12px 22px;cursor:pointer}
+.btn.secondary{background:transparent;border:1px solid var(--gold);color:var(--gold)}
+section{padding:75px 7%}
+.heading{text-align:center;margin:0 auto 35px;max-width:700px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid #2b2b2b;border-radius:6px;overflow:hidden}
+.photo{height:220px;background:#222 center/cover no-repeat;display:grid;place-items:center;color:#aaa;text-align:center;padding:12px}
+.body{padding:20px}
+h3{color:var(--gold);margin:0 0 8px}
+.price{color:var(--gold);font-weight:bold;font-size:20px}
+#perm,#booking{background:#101010}
+.notice{border-left:3px solid var(--gold);background:#1a1a1a;padding:15px;margin-top:25px}
+form{max-width:720px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.field{display:grid;gap:6px}
+.full{grid-column:1/-1}
 label{font-size:14px;color:#ddd}
-footer{text-align:center;padding:28px;border-top:1px solid #292929;color:#aaa}
+footer{text-align:center;padding:30px;border-top:1px solid #292929}
+.small{font-size:12px}
+[dir="rtl"]{text-align:right}
+[dir="rtl"] .notice{border-left:0;border-right:3px solid var(--gold)}
 @media(max-width:650px){
- header{height:auto;min-height:70px;flex-wrap:wrap;padding:15px 5%;gap:12px}
- nav{order:3;width:100%;overflow-x:auto;padding:8px 0}
- nav a{white-space:nowrap}
- .hero{min-height:480px}
- section{padding:52px 5%}
+ header{position:static}
+ nav{order:3;width:100%;gap:12px}
+ nav a{font-size:13px}
+ section{padding:55px 5%}
+ .hero{min-height:70vh}
  form{grid-template-columns:1fr}
- .field.full{grid-column:auto}
+ .full{grid-column:auto}
 }
 </style>
 </head>
 <body>
-
 <header>
-  <div class="logo">THANANCHAI BARBERSHOP</div>
+  <a class="logo" href="#home">THANANCHAI BARBERSHOP</a>
   <nav>
-    <a href="#home">Home</a>
-    <a href="#branches">Branches</a>
-    <a href="#services">Services</a>
-    <a href="#perm">Perm</a>
-    <a href="#booking">Booking</a>
+    <a href="#home" data-i="home">Home</a>
+    <a href="#branches" data-i="branches">Branches</a>
+    <a href="#services" data-i="services">Services</a>
+    <a href="#perm" data-i="perm">Perm</a>
+    <a href="#booking" data-i="booking">Booking</a>
   </nav>
-  <select id="language" aria-label="Language" onchange="setLanguage(this.value)">
-    <option value="en">EN</option>
+  <select id="language" aria-label="Language">
+    <option value="en">English</option>
     <option value="th">ไทย</option>
     <option value="ar">العربية</option>
+    <option value="fr">Français</option>
+    <option value="zh">中文</option>
+    <option value="ru">Русский</option>
   </select>
 </header>
 
 <main>
 <section class="hero" id="home">
-  <div class="hero-content">
-    <div class="tag" data-en="PREMIUM GROOMING" data-th="บริการตัดผมระดับพรีเมียม" data-ar="عناية احترافية وفاخرة">PREMIUM GROOMING</div>
-    <h1 data-en="Your Style.<br>Our Craft." data-th="สไตล์ของคุณ<br>ฝีมือของเรา" data-ar="أسلوبك الخاص<br>وحرفيتنا">Your Style.<br>Our Craft.</h1>
-    <p data-en="Professional cuts. Personal style. Four branches." data-th="ตัดผมอย่างมืออาชีพ มีสไตล์ ใน 4 สาขา" data-ar="حلاقة احترافية وأسلوب مميز في أربعة فروع">Professional cuts. Personal style. Four branches.</p>
-    <a class="btn" href="#booking" data-en="BOOK AN APPOINTMENT" data-th="จองคิว" data-ar="احجز موعدك">BOOK AN APPOINTMENT</a>
+  <div class="hero-inner">
+    <div class="kicker" data-i="kicker">PREMIUM GROOMING</div>
+    <h1 data-i="headline">Your Style.<br>Our Craft.</h1>
+    <p data-i="tagline">Professional cuts. Personal style. Four branches.</p>
+    <a class="btn" href="#booking" data-i="bookNow">BOOK AN APPOINTMENT</a>
   </div>
 </section>
 
 <section id="branches">
-  <div class="section-head">
-    <div class="tag">OUR LOCATIONS</div>
-    <h2 data-en="Find Your Branch" data-th="เลือกสาขาของคุณ" data-ar="اختر فرعك">Find Your Branch</h2>
-    <p data-en="Four branches, one standard of quality." data-th="4 สาขา มาตรฐานเดียวกัน" data-ar="أربعة فروع بمعيار واحد من الجودة">Four branches, one standard of quality.</p>
+  <div class="heading"><div class="kicker">OUR LOCATIONS</div>
+    <h2 data-i="branchTitle">Our Four Branches</h2>
+    <p data-i="branchDesc">Find your nearest branch and choose your barber.</p>
   </div>
   <div class="grid">
-    <article class="card"><div class="photo">Add Branch 1 Photo</div><div class="card-body"><h3>Branch 01</h3><p>Branch address will be added here.</p><a href="#booking" class="btn btn-outline" onclick="chooseBranch(1)">Choose Branch</a></div></article>
-    <article class="card"><div class="photo">Add Branch 2 Photo</div><div class="card-body"><h3>Branch 02</h3><p>Branch address will be added here.</p><a href="#booking" class="btn btn-outline" onclick="chooseBranch(2)">Choose Branch</a></div></article>
-    <article class="card"><div class="photo">Add Branch 3 Photo</div><div class="card-body"><h3>Branch 03</h3><p>Branch address will be added here.</p><a href="#booking" class="btn btn-outline" onclick="chooseBranch(3)">Choose Branch</a></div></article>
-    <article class="card"><div class="photo">Add Branch 4 Photo</div><div class="card-body"><h3>Branch 04</h3><p>Branch address will be added here.</p><a href="#booking" class="btn btn-outline" onclick="chooseBranch(4)">Choose Branch</a></div></article>
+    <article class="card"><div class="photo" style="background-image:url('images/branch-1.jpg')">Add your branch photo</div><div class="body"><h3 data-i="branch1">Branch 01</h3><p data-i="address">Branch address will be added here.</p><a class="btn secondary" href="#booking" onclick="chooseBranch('Branch 01')" data-i="choose">Choose branch</a></div></article>
+    <article class="card"><div class="photo" style="background-image:url('images/branch-2.jpg')">Add your branch photo</div><div class="body"><h3 data-i="branch2">Branch 02</h3><p data-i="address">Branch address will be added here.</p><a class="btn secondary" href="#booking" onclick="chooseBranch('Branch 02')" data-i="choose">Choose branch</a></div></article>
+    <article class="card"><div class="photo" style="background-image:url('images/branch-3.jpg')">Add your branch photo</div><div class="body"><h3 data-i="branch3">Branch 03</h3><p data-i="address">Branch address will be added here.</p><a class="btn secondary" href="#booking" onclick="chooseBranch('Branch 03')" data-i="choose">Choose branch</a></div></article>
+    <article class="card"><div class="photo" style="background-image:url('images/branch-4.jpg')">Add your branch photo</div><div class="body"><h3 data-i="branch4">Branch 04</h3><p data-i="address">Branch address will be added here.</p><a class="btn secondary" href="#booking" onclick="chooseBranch('Branch 04')" data-i="choose">Choose branch</a></div></article>
   </div>
 </section>
 
 <section id="services">
-  <div class="section-head">
-    <div class="tag">OUR SERVICES</div>
-    <h2 data-en="Services & Prices" data-th="บริการและราคา" data-ar="الخدمات والأسعار">Services & Prices</h2>
-    <p>Final prices can be added after you confirm the menu.</p>
-  </div>
+  <div class="heading"><div class="kicker">WHAT WE DO</div><h2 data-i="serviceTitle">Services & Prices</h2><p data-i="serviceDesc">Prices will be confirmed and added later.</p></div>
   <div class="grid">
-    <article class="card"><div class="card-body"><h3>Haircut</h3><p>Classic cuts and modern styles.</p><div class="price">Price TBC</div></div></article>
-    <article class="card"><div class="card-body"><h3>Fade</h3><p>Clean blends and sharp finishes.</p><div class="price">Price TBC</div></div></article>
-    <article class="card"><div class="card-body"><h3>Hair & Beard</h3><p>A complete grooming service.</p><div class="price">Price TBC</div></div></article>
-    <article class="card"><div class="card-body"><h3>Perm & Colour</h3><p>Styles tailored to your hair.</p><div class="price">Price TBC</div></div></article>
+    <article class="card"><div class="body"><h3 data-i="haircut">Haircut</h3><p data-i="haircutDesc">Classic cuts and modern styles.</p><div class="price">Price TBC</div></div></article>
+    <article class="card"><div class="body"><h3 data-i="fade">Fade</h3><p data-i="fadeDesc">Clean blends and sharp finishes.</p><div class="price">Price TBC</div></div></article>
+    <article class="card"><div class="body"><h3 data-i="beard">Haircut & Beard</h3><p data-i="beardDesc">A complete grooming service.</p><div class="price">Price TBC</div></div></article>
+    <article class="card"><div class="body"><h3 data-i="color">Hair Colour</h3><p data-i="colorDesc">Colour options to suit your style.</p><div class="price">Price TBC</div></div></article>
   </div>
 </section>
 
 <section id="perm">
-  <div class="section-head">
-    <div class="tag">PERM SERVICES</div>
-    <h2>Discover Your Perm Style</h2>
-    <p>We will add photos, names and prices for each perm type here.</p>
-  </div>
+  <div class="heading"><div class="kicker">PERM SERVICES</div><h2 data-i="permTitle">Discover Your Perm Style</h2><p data-i="permDesc">Photos, types and prices can be added here.</p></div>
   <div class="grid">
-    <article class="card"><div class="photo">Add Perm Style Photo 1</div><div class="card-body"><h3>Perm Style 01</h3><p>Details and price to be added.</p></div></article>
-    <article class="card"><div class="photo">Add Perm Style Photo 2</div><div class="card-body"><h3>Perm Style 02</h3><p>Details and price to be added.</p></div></article>
-    <article class="card"><div class="photo">Add Perm Style Photo 3</div><div class="card-body"><h3>Perm Style 03</h3><p>Details and price to be added.</p></div></article>
+    <article class="card"><div class="photo" style="background-image:url('images/perm-1.jpg')">Add perm photo 1</div><div class="body"><h3 data-i="perm1">Perm Style 01</h3><p data-i="details">Details and price to be added.</p></div></article>
+    <article class="card"><div class="photo" style="background-image:url('images/perm-2.jpg')">Add perm photo 2</div><div class="body"><h3 data-i="perm2">Perm Style 02</h3><p data-i="details">Details and price to be added.</p></div></article>
+    <article class="card"><div class="photo" style="background-image:url('images/perm-3.jpg')">Add perm photo 3</div><div class="body"><h3 data-i="perm3">Perm Style 03</h3><p data-i="details">Details and price to be added.</p></div></article>
   </div>
-  <div class="notice" style="max-width:800px;margin:28px auto 0">
-    <strong>Before booking a perm</strong>
-    <p>Hair length of at least 15 cm is recommended for all perm types. Results can vary depending on your hair type and the style selected.</p>
-  </div>
+  <div class="notice"><strong data-i="permNoticeTitle">Important perm information</strong><p data-i="permNotice">A hair length of at least 15 cm is recommended for all perm types. Results depend on your hair type and selected style.</p></div>
 </section>
 
 <section id="booking">
-  <div class="section-head">
-    <div class="tag">RESERVATIONS</div>
-    <h2 data-en="Book Your Appointment" data-th="จองคิวของคุณ" data-ar="احجز موعدك">Book Your Appointment</h2>
-    <p>Choose your branch, barber and service.</p>
-  </div>
+  <div class="heading"><div class="kicker">RESERVATIONS</div><h2 data-i="bookingTitle">Book Your Appointment</h2><p data-i="bookingDesc">Choose a branch, barber, service and preferred time.</p></div>
   <form id="bookingForm">
-    <div class="field"><label for="customer">Your name</label><input id="customer" required placeholder="Full name"></div>
-    <div class="field"><label for="phone">Phone / LINE</label><input id="phone" required placeholder="Contact number"></div>
-    <div class="field"><label for="branch">Branch</label><select id="branch" required><option value="">Choose a branch</option><option>Branch 01</option><option>Branch 02</option><option>Branch 03</option><option>Branch 04</option></select></div>
-    <div class="field"><label for="barber">Preferred barber</label><select id="barber" required><option value="">Choose barber</option><option>Any available barber</option><option>Barber 01 - name to be added</option><option>Barber 02 - name to be added</option></select></div>
-    <div class="field"><label for="service">Service</label><select id="service" required><option>Haircut</option><option>Fade</option><option>Hair & Beard</option><option>Perm</option><option>Colour</option></select></div>
-    <div class="field"><label for="date">Preferred date</label><input type="date" id="date" required></div>
-    <div class="field"><label for="time">Preferred time</label><input type="time" id="time" required></div>
-    <div class="field full"><label for="notes">Notes (optional)</label><textarea id="notes" rows="3" placeholder="Tell us what style you want"></textarea></div>
-    <div class="field full"><button class="btn" type="submit">Prepare Booking Request</button><p class="small">Demo only: this form does not send or save bookings yet.</p></div>
+    <div class="field"><label for="customer" data-i="nameLabel">Your name</label><input id="customer" required></div>
+    <div class="field"><label for="phone" data-i="phoneLabel">Phone / LINE</label><input id="phone" required></div>
+    <div class="field"><label for="branch" data-i="branchLabel">Branch</label><select id="branch" required><option value="">Choose a branch</option><option>Branch 01</option><option>Branch 02</option><option>Branch 03</option><option>Branch 04</option></select></div>
+    <div class="field"><label for="barber" data-i="barberLabel">Preferred barber</label><select id="barber" required><option value="">Choose a barber</option><option>Any available barber</option><option>Barber 01 (edit name later)</option><option>Barber 02 (edit name later)</option></select></div>
+    <div class="field"><label for="service" data-i="serviceLabel">Service</label><select id="service" required><option>Haircut</option><option>Fade</option><option>Haircut & Beard</option><option>Perm</option><option>Hair Colour</option></select></div>
+    <div class="field"><label for="date" data-i="dateLabel">Preferred date</label><input id="date" type="date" required></div>
+    <div class="field"><label for="time" data-i="timeLabel">Preferred time</label><input id="time" type="time" required></div>
+    <div class="field full"><label for="notes" data-i="notesLabel">Notes (optional)</label><textarea id="notes" rows="3"></textarea></div>
+    <div class="field full"><button class="btn" type="submit" data-i="submit">Prepare booking request</button><p class="small" data-i="demo">Demo only: bookings are not sent or saved yet.</p></div>
   </form>
 </section>
 </main>
 
-<footer>
-  <div class="logo">THANANCHAI BARBERSHOP</div>
-  <p>Four branches • Bangkok, Thailand</p>
-  <p class="small">Branch details and contact information will be added after confirmation.</p>
-</footer>
+<footer><div class="logo">THANANCHAI BARBERSHOP</div><p data-i="footer">Four branches • Bangkok, Thailand</p></footer>
 
 <script>
-function chooseBranch(n){
-  document.getElementById('branch').selectedIndex=n;
-}
+const translations={
+en:{
+home:"Home",branches:"Branches",services:"Services",perm:"Perm",booking:"Booking",kicker:"PREMIUM GROOMING",headline:"Your Style.<br>Our Craft.",tagline:"Professional cuts. Personal style. Four branches.",bookNow:"BOOK AN APPOINTMENT",branchTitle:"Our Four Branches",branchDesc:"Find your nearest branch and choose your barber.",branch1:"Branch 01",branch2:"Branch 02",branch3:"Branch 03",branch4:"Branch 04",address:"Branch address will be added here.",choose:"Choose branch",serviceTitle:"Services & Prices",serviceDesc:"Prices will be confirmed and added later.",haircut:"Haircut",haircutDesc:"Classic cuts and modern styles.",fade:"Fade",fadeDesc:"Clean blends and sharp finishes.",beard:"Haircut & Beard",beardDesc:"A complete grooming service.",color:"Hair Colour",colorDesc:"Colour options to suit your style.",permTitle:"Discover Your Perm Style",permDesc:"Photos, types and prices can be added here.",perm1:"Perm Style 01",perm2:"Perm Style 02",perm3:"Perm Style 03",details:"Details and price to be added.",permNoticeTitle:"Important perm information",permNotice:"A hair length of at least 15 cm is recommended for all perm types. Results depend on your hair type and selected style.",bookingTitle:"Book Your Appointment",bookingDesc:"Choose a branch, barber, service and preferred time.",nameLabel:"Your name",phoneLabel:"Phone / LINE",branchLabel:"Branch",barberLabel:"Preferred barber",serviceLabel:"Service",dateLabel:"Preferred date",timeLabel:"Preferred time",notesLabel:"Notes (optional)",submit:"Prepare booking request",demo:"Demo only: bookings are not sent or saved yet.",footer:"Four branches • Bangkok, Thailand",sent:"This is a preview only. Online booking will be connected later.",chooseBranch:"Choose a branch"},
+th:{
+home:"หน้าแรก",branches:"สาขา",services:"บริการ",perm:"ดัดผม",booking:"จองคิว",kicker:"บริการตัดผมระดับพรีเมียม",headline:"สไตล์ของคุณ<br>ฝีมือของเรา",tagline:"บริการตัดผมมืออาชีพ มี 4 สาขา",bookNow:"จองคิว",branchTitle:"ร้านของเราทั้ง 4 สาขา",branchDesc:"เลือกสาขาและช่างตัดผมที่คุณต้องการ",branch1:"สาขา 01",branch2:"สาขา 02",branch3:"สาขา 03",branch4:"สาขา 04",address:"เพิ่มที่อยู่สาขาภายหลัง",choose:"เลือกสาขา",serviceTitle:"บริการและราคา",serviceDesc:"จะเพิ่มราคาหลังยืนยันข้อมูล",haircut:"ตัดผม",haircutDesc:"ทรงคลาสสิกและทรงทันสมัย",fade:"เฟด",fadeDesc:"ไล่ระดับอย่างประณีต",beard:"ตัดผมและหนวดเครา",beardDesc:"บริการดูแลครบวงจร",color:"ทำสีผม",colorDesc:"เลือกสีให้เหมาะกับสไตล์คุณ",permTitle:"เลือกสไตล์ดัดผม",permDesc:"เพิ่มรูปแบบและราคาได้ภายหลัง",perm1:"ดัดผมแบบ 01",perm2:"ดัดผมแบบ 02",perm3:"ดัดผมแบบ 03",details:"เพิ่มรายละเอียดและราคาภายหลัง",permNoticeTitle:"ข้อมูลสำคัญเกี่ยวกับการดัดผม",permNotice:"แนะนำให้ผมยาวอย่างน้อย 15 ซม. สำหรับการดัดผมทุกประเภท ผลลัพธ์ขึ้นอยู่กับสภาพเส้นผมและทรงที่เลือก",bookingTitle:"จองคิว",bookingDesc:"เลือกสาขา ช่าง บริการ และเวลาที่ต้องการ",nameLabel:"ชื่อของคุณ",phoneLabel:"โทรศัพท์ / LINE",branchLabel:"สาขา",barberLabel:"ช่างที่ต้องการ",serviceLabel:"บริการ",dateLabel:"วันที่ต้องการ",timeLabel:"เวลาที่ต้องการ",notesLabel:"หมายเหตุ (ไม่บังคับ)",submit:"เตรียมคำขอจอง",demo:"ตัวอย่างเท่านั้น ระบบยังไม่บันทึกหรือส่งการจอง",footer:"4 สาขา • กรุงเทพฯ",sent:"นี่เป็นเพียงตัวอย่าง ระบบจองออนไลน์จะเพิ่มภายหลัง",chooseBranch:"เลือกสาขา"},
+ar:{
+home:"الرئيسية",branches:"الفروع",services:"الخدمات",perm:"البيرم",booking:"الحجز",kicker:"عناية احترافية فاخرة",headline:"أسلوبك الخاص<br>وحرفيتنا",tagline:"حلاقة احترافية وأسلوب مميز في أربعة فروع",bookNow:"احجز موعدك",branchTitle:"فروعنا الأربعة",branchDesc:"اختر الفرع والحلاق المناسب لك",branch1:"الفرع الأول",branch2:"الفرع الثاني",branch3:"الفرع الثالث",branch4:"الفرع الرابع",address:"سنضيف عنوان الفرع لاحقًا",choose:"اختر الفرع",serviceTitle:"الخدمات والأسعار",serviceDesc:"سنضيف الأسعار بعد تأكيدها",haircut:"قص شعر",haircutDesc:"قصات كلاسيكية وعصرية",fade:"فيد",fadeDesc:"تدرّج نظيف واحترافي",beard:"شعر ولحية",beardDesc:"خدمة عناية متكاملة",color:"صبغة شعر",colorDesc:"ألوان تناسب أسلوبك",permTitle:"اكتشف أنواع البيرم",permDesc:"سنضيف الصور والأنواع والأسعار لاحقًا",perm1:"نوع بيرم 1",perm2:"نوع بيرم 2",perm3:"نوع بيرم 3",details:"التفاصيل والسعر سيضافان لاحقًا",permNoticeTitle:"معلومات مهمة عن البيرم",permNotice:"يُفضّل أن يكون طول الشعر 15 سم على الأقل لجميع أنواع البيرم. تختلف النتيجة حسب طبيعة الشعر والنوع المختار.",bookingTitle:"احجز موعدك",bookingDesc:"اختر الفرع والحلاق والخدمة والوقت المناسب",nameLabel:"اسمك",phoneLabel:"الهاتف / LINE",branchLabel:"الفرع",barberLabel:"الحلاق المفضّل",serviceLabel:"الخدمة",dateLabel:"التاريخ المفضّل",timeLabel:"الوقت المفضّل",notesLabel:"ملاحظات (اختياري)",submit:"تجهيز طلب الحجز",demo:"هذه معاينة فقط؛ الحجوزات لا تُرسل أو تُحفظ بعد.",footer:"أربعة فروع • بانكوك، تايلاند",sent:"هذه معاينة فقط. سنربط نظام الحجز لاحقًا",chooseBranch:"اختر الفرع"},
+fr:{
+home:"Accueil",branches:"Succursales",services:"Services",perm:"Permanente",booking:"Réservation",kicker:"SOINS PREMIUM",headline:"Votre style.<br>Notre savoir-faire.",tagline:"Coupes professionnelles. Quatre succursales.",bookNow:"PRENDRE RENDEZ-VOUS",branchTitle:"Nos quatre succursales",branchDesc:"Choisissez votre succursale et votre coiffeur.",branch1:"Succursale 01",branch2:"Succursale 02",branch3:"Succursale 03",branch4:"Succursale 04",address:"Adresse à ajouter.",choose:"Choisir",serviceTitle:"Services et tarifs",serviceDesc:"Tarifs à confirmer.",haircut:"Coupe",haircutDesc:"Styles classiques et modernes.",fade:"Dégradé",fadeDesc:"Dégradés précis.",beard:"Coupe et barbe",beardDesc:"Service complet.",color:"Coloration",colorDesc:"Des couleurs adaptées à votre style.",permTitle:"Découvrez nos permanentes",permDesc:"Photos et tarifs à ajouter.",perm1:"Style 01",perm2:"Style 02",perm3:"Style 03",details:"Détails et tarif à ajouter.",permNoticeTitle:"Information importante",permNotice:"Une longueur d'au moins 15 cm est recommandée pour toutes les permanentes.",bookingTitle:"Réserver un rendez-vous",bookingDesc:"Choisissez votre succursale, coiffeur et service.",nameLabel:"Votre nom",phoneLabel:"Téléphone / LINE",branchLabel:"Succursale",barberLabel:"Coiffeur préféré",serviceLabel:"Service",dateLabel:"Date souhaitée",timeLabel:"Heure souhaitée",notesLabel:"Notes (facultatif)",submit:"Préparer la demande",demo:"Démo uniquement : les réservations ne sont pas enregistrées.",footer:"Quatre succursales • Bangkok, Thaïlande",sent:"Aperçu uniquement. La réservation en ligne sera ajoutée plus tard.",chooseBranch:"Choisir une succursale"},
+zh:{
+home:"首页",branches:"分店",services:"服务",perm:"烫发",booking:"预约",kicker:"高端理发服务",headline:"你的风格。<br>我们的技艺。",tagline:"专业剪发，四家分店。",bookNow:"立即预约",branchTitle:"我们的四家分店",branchDesc:"选择分店和理发师。",branch1:"分店 01",branch2:"分店 02",branch3:"分店 03",branch4:"分店 04",address:"稍后添加地址。",choose:"选择分店",serviceTitle:"服务与价格",serviceDesc:"价格确认后添加。",haircut:"剪发",haircutDesc:"经典与现代发型。",fade:"渐层剪发",fadeDesc:"精细渐层效果。",beard:"剪发与修胡",beardDesc:"完整造型服务。",color:"染发",colorDesc:"适合你的发色。",permTitle:"探索烫发造型",permDesc:"稍后添加图片和价格。",perm1:"烫发造型 01",perm2:"烫发造型 02",perm3:"烫发造型 03",details:"稍后添加详情和价格。",permNoticeTitle:"烫发重要提示",permNotice:"建议所有烫发类型的头发长度至少为15厘米。效果因发质和造型而异。",bookingTitle:"预约",bookingDesc:"选择分店、理发师、服务和时间。",nameLabel:"姓名",phoneLabel:"电话 / LINE",branchLabel:"分店",barberLabel:"理发师",serviceLabel:"服务",dateLabel:"日期",timeLabel:"时间",notesLabel:"备注（选填）",submit:"准备预约请求",demo:"演示版本：预约尚未发送或保存。",footer:"四家分店 • 泰国曼谷",sent:"这只是预览，稍后将接入在线预约。",chooseBranch:"选择分店"},
+ru:{
+home:"Главная",branches:"Филиалы",services:"Услуги",perm:"Завивка",booking:"Запись",kicker:"ПРЕМИАЛЬНЫЙ УХОД",headline:"Ваш стиль.<br>Наше мастерство.",tagline:"Профессиональные стрижки. Четыре филиала.",bookNow:"ЗАПИСАТЬСЯ",branchTitle:"Наши четыре филиала",branchDesc:"Выберите филиал и мастера.",branch1:"Филиал 01",branch2:"Филиал 02",branch3:"Филиал 03",branch4:"Филиал 04",address:"Адрес будет добавлен.",choose:"Выбрать филиал",serviceTitle:"Услуги и цены",serviceDesc:"Цены будут добавлены после подтверждения.",haircut:"Стрижка",haircutDesc:"Классические и современные стили.",fade:"Фейд",fadeDesc:"Чёткий плавный переход.",beard:"Стрижка и борода",beardDesc:"Комплексный уход.",color:"Окрашивание",colorDesc:"Цвет под ваш стиль.",permTitle:"Варианты завивки",permDesc:"Фотографии и цены будут добавлены.",perm1:"Завивка 01",perm2:"Завивка 02",perm3:"Завивка 03",details:"Описание и цена будут добавлены.",permNoticeTitle:"Важно о завивке",permNotice:"Для всех видов завивки рекомендуется длина волос не менее 15 см.",bookingTitle:"Записаться на приём",bookingDesc:"Выберите филиал, мастера, услугу и время.",nameLabel:"Ваше имя",phoneLabel:"Телефон / LINE",branchLabel:"Филиал",barberLabel:"Предпочитаемый мастер",serviceLabel:"Услуга",dateLabel:"Желаемая дата",timeLabel:"Желаемое время",notesLabel:"Примечания (необязательно)",submit:"Подготовить заявку",demo:"Демонстрация: записи пока не отправляются и не сохраняются.",footer:"Четыре филиала • Бангкок, Таиланд",sent:"Это предварительный просмотр. Онлайн-запись будет добавлена позже.",chooseBranch:"Выберите филиал"}
+};
 function setLanguage(lang){
-  document.documentElement.lang=lang;
-  document.documentElement.dir=lang==='ar'?'rtl':'ltr';
-  document.querySelectorAll('[data-'+lang+']').forEach(el=>{
-    el.innerHTML=el.getAttribute('data-'+lang);
-  });
+ const t=translations[lang]||translations.en;
+ document.documentElement.lang=lang;
+ document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+ document.querySelectorAll("[data-i]").forEach(el=>{
+  const key=el.dataset.i;
+  if(t[key]) el.innerHTML=t[key];
+ });
 }
-document.getElementById('bookingForm').addEventListener('submit',function(e){
-  e.preventDefault();
-  alert('This is a design preview only. Online booking will be connected later.');
+document.getElementById("language").addEventListener("change",e=>setLanguage(e.target.value));
+function chooseBranch(name){
+ document.getElementById("branch").value=name;
+}
+document.getElementById("bookingForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ const lang=document.getElementById("language").value;
+ alert(translations[lang].sent);
 });
 </script>
 </body>
